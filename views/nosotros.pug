@@ -1,0 +1,28 @@
+extends ./layout/index
+
+block contenido
+    section.section
+        
+        .parallax-container
+            .parallax
+                img(src="img/quienes_somos.jpg")
+        
+        .section.white
+            .row.container
+                h2.header #{titulo}
+                p.grey-text.text-darken-3.lighten-3 #{quienes}
+
+        .container           
+            .row
+                h3.header Visión
+                p.grey-text.text-darken-3.lighten-3 #{vision}
+            .row
+                h3.header Misión
+                p.grey-text.text-darken-3.lighten-3 #{mision}
+            .row
+                h3.header Objetivo
+                p.grey-text.text-darken-3.lighten-3 #{objetivo}
+    
+    include layout/redes
+
+    include layout/contacto

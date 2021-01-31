@@ -1,0 +1,41 @@
+extends ./layout/index
+
+block contenido
+    section.section
+        .parallax-container
+            .parallax
+                img(src=`/img/${tour.imagen}`)
+        
+        .section.white
+            .row.container
+                h2.header.center #{tour.titulo}
+                h4.grey-text.text-darken-3.lighten-3.center #{tour.subtitulo}
+        
+        .container           
+            .row
+                h3.header Descripción
+                p.grey-text.text-darken-3.lighten-3.justificado #{tour.descripcion}
+            .row
+                h3.header Precio
+                - var precio = tour.precio.split(",")
+                if (precio.length < 2)
+                    p.grey-text.text-darken-3.lighten-3 Adulto: S/ #{precio[0]}
+                else
+                    p.grey-text.text-darken-3.lighten-3 Adulto: S/ #{precio[0]} Niños: S/ #{precio[1]}
+            .row
+                h3.header Duración
+                p.grey-text.text-darken-3.lighten-3 #{tour.duracion}
+            
+            .row
+                h3.header Resumen
+                p.grey-text.text-darken-3.lighten-3 #{tour.resumen}
+            
+            .row
+                h3.header Condiciones
+                p.grey-text.text-darken-3.lighten-3 #{tour.condiciones}
+
+    
+
+    include layout/redes
+
+    include layout/contacto
